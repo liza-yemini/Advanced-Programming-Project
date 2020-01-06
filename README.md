@@ -1,9 +1,11 @@
 **Flight Simulator Project**
 
+
 An interpreter for controlling remote-piloted vehicle(RPV) using virtual space of the flight simulator
 of Flight-Gear.
 
 **Description**
+
 
 The Flight-Gear simulator used as a Server and Client. As a server the simulator send's to out program the
 information about the values the diffrent parameters of the flight in real time.
@@ -13,6 +15,7 @@ As a client the simulator get's from the server of our project the values that h
 for flying the airplane.
 
 **Getting Started**
+
 
 First of all download the FlightGear, the project and fly.txt.
 
@@ -44,6 +47,7 @@ and then click Fly on the FlightGear.
 now the airplane should fly.
 
 **Authors**
+
 
 Ziv Zaarur 
 Liza Yemini
