@@ -40,6 +40,7 @@ In your terminal or command prompt, navigate to the project directory and execut
 ```bash
 g++ main.cpp         # Compile the program
 ./a.out fly.txt      # Run the program using the fly.txt file
+```
 
 Finally, click Fly on FlightGear. The aircraft should now begin its flight.
 
