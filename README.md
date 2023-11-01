@@ -1,54 +1,51 @@
-**Flight Simulator Project**
+# Flight Simulator Project
 
+An interpreter designed to control a remote-piloted vehicle (RPV) within the virtual environment of the [Flight-Gear simulator](https://www.flightgear.org/).
 
-An interpreter for controlling remote-piloted vehicle(RPV) using virtual space of the flight simulator
-of Flight-Gear.
+## Description
 
-**Description**
+The Flight-Gear simulator functions both as a Server and a Client:
 
+- **As a Server**: The simulator provides our program with real-time data regarding various flight parameters.
+  
+- **As a Client**: The simulator receives values from our project's server, which are then utilized to control the aircraft's flight.
 
-The Flight-Gear simulator used as a Server and Client. As a server the simulator send's to out program the
-information about the values the diffrent parameters of the flight in real time.
+## Getting Started
 
-As a client the simulator get's from the server of our project the values that have to inject to the simulator
+### Prerequisites
 
-for flying the airplane.
+1. Download [FlightGear](https://www.flightgear.org/).
+2. Download the project files and `fly.txt`.
 
-**Getting Started**
+### Setup
 
+1. Launch FlightGear.
+2. Go to `Settings` on the homepage.
+3. Enter the following under `Additional Settings`:
 
-First of all download the FlightGear, the project and fly.txt.
+--telnet=socket,in,10,127.0.0.1,5402,tcp
+--httpd=8080
+--generic=socket,out,10,127.0.0.1,5400,tcp,generic_small
 
-At the home page of the FlightGear simulator enter to the Setting and then enter at the Additional Settings:
+- The first command instructs the simulator to initiate a background server that allows telnet client connections.
+- The second command directs the simulator to initiate a client which will connect to our project's server via socket.
+- `10` denotes the frequency of receiving (in) or sending (out) data.
 
-"--telnet=socket,in,10,127.0.0.1,5402,tcp --httpd=8080
+**Note**: Ensure our server is running before launching the simulator.
 
- --generic=socket,out,10,127.0.0.1,5400,tcp,generic_small"
- 
-The first definition tell's the simulator to open at the background Server that every telnet client can connect
+### Compilation and Execution
 
-him.
-The second definition tell's the simulator to open at the background client which will connect to our Server
+In your terminal or command prompt, navigate to the project directory and execute:
 
-by socket.
+```bash
+g++ main.cpp         # Compile the program
+./a.out fly.txt      # Run the program using the fly.txt file
 
-for making this definition work we have to open our Server before starting the simulator.
+Finally, click Fly on FlightGear. The aircraft should now begin its flight.
 
-10 is the frequency of the recieve(in) or send(out).
+### Development Environment
+This project was developed on Linux.
 
-After that on the cmd cd into the folder which the program download in and write:
-
-"g++ main.cpp" - for compiling the program.
-
-"./a.out fly.txt" - for running the program with the file fly.txt
-
-and then click Fly on the FlightGear.
-
-now the airplane should fly.
-
-**Authors**
-
-
-Ziv Zaarur 
-
+### Authors 
+Ziv Zaarur
 Liza Yemini
